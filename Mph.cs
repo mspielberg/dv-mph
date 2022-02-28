@@ -1,3 +1,6 @@
+using CCL_GameScripts.CabControls;
+using DVCustomCarLoader;
+using DVCustomCarLoader.LocoComponents;
 using HarmonyLib;
 using System.Linq;
 using TMPro;
@@ -57,6 +60,21 @@ namespace DvMod.Mph
             public static void Postfix(IndicatorsSteam __instance)
             {
                 __instance.speed.maxValue *= Constants.KmPerMile;
+            }
+        }
+
+        public static void ModifyCustomCarPrefabs()
+        {
+            foreach (var car in CustomCarManager.CustomCarTypes)
+            {
+                foreach (var relay in car.InteriorPrefab.GetComponentsInChildren<IndicatorRelay>())
+                {
+                    if (relay.EventType == SimEventType.Speed)
+                    {
+                        Main.DebugLog($"Adjusting speedometer for {car.identifier}");
+                        relay.Indicator.maxValue *= Constants.KmPerMile;
+                    }
+                }
             }
         }
     }

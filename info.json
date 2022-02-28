@@ -3,7 +3,7 @@
   "DisplayName": "MPH",
   "Author": "Zeibach",
   "Version": "0.1.0",
-  "LoadAfter": [],
+  "LoadAfter": [ "DVCustomCarLoader" ],
   "AssemblyName": "Mph.dll",
   "EntryMethod": "DvMod.Mph.Main.Load",
   "HomePage": "https://www.nexusmods.com/derailvalley/mods/401",

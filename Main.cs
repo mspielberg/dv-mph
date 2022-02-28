@@ -23,12 +23,19 @@ namespace DvMod.Mph
             if (value)
             {
                 harmony.PatchAll();
+                if (UnityModManager.FindMod("DVCustomCarLoader")?.Loaded ?? false)
+                    Mph.Speedometers.ModifyCustomCarPrefabs();
             }
             else
             {
                 harmony.UnpatchAll(modEntry.Info.Id);
             }
             return true;
+        }
+
+        static public void DebugLog(string s)
+        {
+            mod?.Logger.Log(s);
         }
     }
 }

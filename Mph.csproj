@@ -20,6 +20,8 @@
   <ItemGroup>
     <Reference Include="0Harmony"/>
     <Reference Include="Assembly-CSharp"/>
+    <Reference Include="CCL_GameScripts"/>
+    <Reference Include="DVCustomCarLoader"/>
     <Reference Include="Unity.TextMeshPro"/>
     <Reference Include="UnityEngine.CoreModule"/>
     <Reference Include="UnityEngine.UI"/>
