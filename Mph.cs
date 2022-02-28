@@ -1,4 +1,5 @@
 using CCL_GameScripts.CabControls;
+using DV.Signs;
 using DVCustomCarLoader;
 using DVCustomCarLoader.LocoComponents;
 using HarmonyLib;
@@ -21,12 +22,15 @@ namespace DvMod.Mph
             public static void Postfix(TextMeshPro __instance)
             {
                 var tmp = __instance;
+                if (tmp.transform.GetComponentInParent<SignDebug>() == null)
+                    return;
+
                 var text = tmp.text;
                 if (text.Length > 0 && text.All(char.IsDigit))
                 {
-                    if (float.TryParse(text, out var kmh))
+                    if (int.TryParse(text, out var kmh))
                     {
-                        var mph = Mathf.RoundToInt(kmh  * 10f / Constants.KmPerMile / 5) * 5;
+                        var mph = Mathf.RoundToInt(kmh * 10f / Constants.KmPerMile / 5) * 5;
                         tmp.text = mph.ToString();
                     }
                 }
