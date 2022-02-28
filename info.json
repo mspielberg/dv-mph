@@ -1,0 +1,11 @@
+{
+  "Id": "Mph",
+  "DisplayName": "MPH",
+  "Author": "Zeibach",
+  "Version": "0.1.0",
+  "LoadAfter": [],
+  "AssemblyName": "Mph.dll",
+  "EntryMethod": "DvMod.Mph.Main.Load",
+  "HomePage": "https://www.nexusmods.com/derailvalley/mods/401",
+  "Repository": "https://raw.githubusercontent.com/mspielberg/dv-mph/master/resources/repository.json"
+}
