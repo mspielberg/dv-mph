@@ -25,7 +25,7 @@ namespace DvMod.Mph
             {
                 harmony.PatchAll();
                 UnityModManager.ModEntry ccl = UnityModManager.FindMod("DVCustomCarLoader");
-                if ((ccl?.Loaded ?? false) && ccl.Version >= Version.Parse("1.7.2"))
+                if ((ccl?.Active ?? false) && ccl.Version >= Version.Parse("1.7.2"))
                     Mph.Speedometers.ModifyCustomCarPrefabs();
             }
             else

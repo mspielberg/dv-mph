@@ -69,7 +69,7 @@ namespace DvMod.Mph
 
         public static void ModifyCustomCarPrefabs()
         {
-            foreach (var car in CustomCarManager.CustomCarTypes)
+            foreach (var car in CustomCarManager.CustomCarTypes.Where(customCar => customCar.InteriorPrefab != null))
             {
                 foreach (var relay in car.InteriorPrefab.GetComponentsInChildren<IndicatorRelay>())
                 {
