@@ -2,7 +2,7 @@
   "Id": "Mph",
   "DisplayName": "MPH",
   "Author": "Zeibach",
-  "Version": "0.2.0",
+  "Version": "0.2.1",
   "LoadAfter": [ "DVCustomCarLoader" ],
   "AssemblyName": "Mph.dll",
   "EntryMethod": "DvMod.Mph.Main.Load",
