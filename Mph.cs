@@ -73,7 +73,7 @@ namespace DvMod.Mph
             {
                 foreach (var relay in car.InteriorPrefab.GetComponentsInChildren<IndicatorRelay>())
                 {
-                    if (relay.EventType == SimEventType.Speed)
+                    if (relay.EventBinding == SimEventType.Speed)
                     {
                         Main.DebugLog($"Adjusting speedometer for {car.identifier}");
                         relay.Indicator.maxValue *= Constants.KmPerMile;
